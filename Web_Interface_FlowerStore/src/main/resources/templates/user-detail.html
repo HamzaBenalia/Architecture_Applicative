@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Détails de l'Utilisateur</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5" th:text="${user.firstName} + ' ' + ${user.lastName}">Nom Prénom</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${user.userName}">Nom d'Utilisateur</h5>
+            <p class="card-text" th:text="'Adresse: ' + ${user.address}">Adresse</p>
+            <p class="card-text" th:text="'Email: ' + ${user.email}">Email</p>
+            <p class="card-text" th:text="'Date de Naissance: ' + ${user.birthDate}">Date de Naissance</p>
+        </div>
+    </div>
+    <a href="/users" class="btn btn-primary mt-3">Retour à la Liste</a>
+</div>
+</body>
+</html>

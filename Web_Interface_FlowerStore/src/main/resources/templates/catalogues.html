@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Catalogues</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Fleurs en Catalogues</h1>
+    <table class="table table-bordered mt-3">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Catégorie</th>
+            <th>Stock</th>
+            <th>Prix</th>
+            <th>Image</th>
+            <th>Réduction</th>
+            <th>Évaluation</th>
+            <th>Description</th>
+            <th>Détails</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="catalogue : ${catalogues}">
+            <td th:text="${catalogue.productName}">Nom</td>
+            <td th:text="${catalogue.productCategory}">Catégorie</td>
+            <td th:text="${catalogue.productStock}">Stock</td>
+            <td th:text="${catalogue.productPrice}">Prix</td>
+            <td>
+                <img th:src="@{'/' + ${catalogue.productImage}}" alt="Image" width="100">
+            </td>
+            <td th:text="${catalogue.productDiscount}">Réduction</td>
+            <td th:text="${catalogue.productRating}">Évaluation</td>
+            <td th:text="${catalogue.description}">Description</td>
+            <td>
+                <a th:href="@{/catalogue/{id}(id=${catalogue.productId})}" class="btn btn-info">Voir Détails</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

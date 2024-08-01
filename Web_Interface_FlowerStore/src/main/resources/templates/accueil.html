@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Vente de Fleurs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero-image {
+            background-image: url('/images/hero-background.jpg'); /* Remplacez par le chemin de votre image */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero-text {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Ajoute un fond semi-transparent pour mieux lire le texte */
+            border-radius: 10px;
+        }
+        .featured-section img {
+            max-width: 100%;
+            height: 200px; /* Définir la hauteur fixe pour toutes les images */
+            object-fit: cover; /* Assure que l'image s'ajuste bien dans le conteneur */
+            border-radius: 8px;
+        }
+        .card {
+            border: none;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">FleursShop</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/catalogues}">Catalogue</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/panier}">Panier</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/contact}">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="hero-image">
+    <div class="hero-text">
+        <h1>Bienvenue chez FleursShop</h1>
+        <p class="lead">Votre destination pour les plus belles fleurs</p>
+        <a class="btn btn-light btn-lg" th:href="@{/catalogues}">Voir le Catalogue</a>
+    </div>
+</header>
+
+<!-- Featured Flowers Section -->
+<section class="container my-5">
+    <h2 class="text-center mb-4">Fleurs en Vedette</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img th:src="@{'/lily.jpg'}" class="card-img-top" alt="Lily" width="100" >
+                <div class="card-body text-center">
+                    <h5 class="card-title">Lily</h5>
+                    <p class="card-text">Elegant white lily, perfect for any occasion.</p>
+                    <a href="#" class="btn btn-primary">Voir Détails</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img th:src="@{'/rose.jpg'}" class="card-img-top" alt="Rose" width="100" >
+                <div class="card-body text-center">
+                    <h5 class="card-title">Rose</h5>
+                    <p class="card-text">Classic red rose, a symbol of love and passion.</p>
+                    <a href="#" class="btn btn-primary">Voir Détails</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img th:src="@{'/tulip.jpg'}" class="card-img-top" alt="Tulip" width="100" >
+                <div class="card-body text-center">
+                    <h5 class="card-title">Tulip</h5>
+                    <p class="card-text">Bright and colorful tulips to brighten your day.</p>
+                    <a href="#" class="btn btn-primary">Voir Détails</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-light text-center py-4">
+    <div class="container">
+        <p>&copy; 2024 FleursShop. Tous droits réservés.</p>
+        <p>Contactez-nous: <a href="mailto:contact@fleursshop.com">contact@fleursshop.com</a></p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

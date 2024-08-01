@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Détails de la Fleur</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5" th:text="${catalogue.productName}">Nom de la Fleur</h1>
+    <div class="card">
+        <img th:src="@{'/' + ${catalogue.productImage}}" class="card-img-top" alt="Image">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${catalogue.productCategory}">Catégorie</h5>
+            <p class="card-text" th:text="'Stock: ' + ${catalogue.productStock}">Stock</p>
+            <p class="card-text" th:text="'Prix: $' + ${catalogue.productPrice}">Prix</p>
+            <p class="card-text" th:text="'Réduction: ' + ${catalogue.productDiscount}">Réduction</p>
+            <p class="card-text" th:text="'Évaluation: ' + ${catalogue.productRating}">Évaluation</p>
+            <p class="card-text" th:text="${catalogue.description}">Description</p>
+        </div>
+    </div>
+    <a href="/catalogues" class="btn btn-primary mt-3">Retour à la Liste</a>
+</div>
+</body>
+</html>
